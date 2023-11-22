@@ -1,0 +1,35 @@
+{
+  "canisters": {
+    "milkyway_backend": {
+      "main": "src/milkyway_backend/main.mo",
+      "type": "motoko"
+    },
+    "milkyway_frontend": {
+      "dependencies": [
+        "milkyway_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/milkyway_frontend/src/index.html"
+      },
+      "source": [
+        "src/milkyway_frontend/assets",
+        "dist/milkyway_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "dfx": "0.15.1",
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  },
+  "version": 1
+}
